@@ -10,6 +10,9 @@ namespace EmployeeWages
 
             //Constants
             int IS_FULL_TIME = 1;
+            int EMP_RATE_PER_HOUR = 20;
+            int FULL_TIME = 8;
+
             Random random = new Random();
 
             //Computations
@@ -18,10 +21,12 @@ namespace EmployeeWages
             if(empCheck == IS_FULL_TIME)
             {
                 Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee daily Wages = " + EMP_RATE_PER_HOUR*FULL_TIME);
             }
             else
             {
                 Console.WriteLine("Employee is Absent");
+                Console.WriteLine("Employee daily Wages = 0");
             }
         }
     }
