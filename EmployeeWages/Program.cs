@@ -43,8 +43,9 @@ namespace EmployeeWages
 
                 empWage = empHrs * EMP_RATE_PER_HOUR;
                 totalempWage = totalempWage + empWage;
+                Console.WriteLine("Employee Wage = " + empWage);
             }
-            Console.WriteLine("Employee Wage = " + empWage);
+            
             Console.WriteLine("Total Employee Wage = " + totalempWage);
         }
     }
