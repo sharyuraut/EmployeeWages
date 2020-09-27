@@ -20,27 +20,27 @@ namespace EmployeeWages
             int empWage = 0, totalempWage = 0;
 
             //Computation
-            Random random = new Random();
-            int empCheck = random.Next(0, 3);
-
-            switch (empCheck)
-            {
-                case IS_PART_TIME:
-                    Console.WriteLine("Employee available for part time.");
-                    empHrs = PART_TIME;
-                    break;
-                case IS_FULL_TIME:
-                    Console.WriteLine("Employee Present.");
-                    empHrs = FULL_TIME;
-                    break;
-                default:
-                    Console.WriteLine("Employee Absent.");
-                    empHrs = 0;
-                    break;
-            }
-
             for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
             {
+                Random random = new Random();
+                int empCheck = random.Next(0, 3);
+
+                switch (empCheck)
+                {
+                    case IS_PART_TIME:
+                        Console.WriteLine("Employee available for part time.");
+                        empHrs = PART_TIME;
+                        break;
+                    case IS_FULL_TIME:
+                        Console.WriteLine("Employee Present.");
+                        empHrs = FULL_TIME;
+                        break;
+                    default:
+                        Console.WriteLine("Employee Absent.");
+                        empHrs = 0;
+                        break;
+                }
+
                 empWage = empHrs * EMP_RATE_PER_HOUR;
                 totalempWage = totalempWage + empWage;
             }
