@@ -25,11 +25,11 @@ namespace EmployeeWages
             {
                 case IS_PART_TIME:
                     Console.WriteLine("Employee available for part time.");
-                    empHrs = 4;
+                    empHrs = PART_TIME;
                     break;
                 case IS_FULL_TIME:
                     Console.WriteLine("Employee Present.");
-                    empHrs = 8;
+                    empHrs = FULL_TIME;
                     break;
                 default:
                     Console.WriteLine("Employee Absent.");
