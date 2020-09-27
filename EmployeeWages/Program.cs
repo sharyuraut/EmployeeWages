@@ -10,14 +10,16 @@ namespace EmployeeWages
         public const int EMP_RATE_PER_HOUR = 20;
         public const int FULL_TIME = 8;
         public const int PART_TIME = 4;
+        public const int NUM_OF_WORKING_DAYS = 2;
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage computation Program!");
 
             //Variables
             int empHrs = 0;
-            int empWage = 0;
+            int empWage = 0, totalempWage = 0;
 
+            //Computation
             Random random = new Random();
             int empCheck = random.Next(0, 3);
 
@@ -37,8 +39,13 @@ namespace EmployeeWages
                     break;
             }
 
-            empWage = empHrs * EMP_RATE_PER_HOUR;
+            for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
+            {
+                empWage = empHrs * EMP_RATE_PER_HOUR;
+                totalempWage = totalempWage + empWage;
+            }
             Console.WriteLine("Employee Wage = " + empWage);
+            Console.WriteLine("Total Employee Wage = " + totalempWage);
         }
     }
 }
