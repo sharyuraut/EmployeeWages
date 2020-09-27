@@ -4,37 +4,41 @@ namespace EmployeeWages
 {
     class Program
     {
+        //Constants
+        public const int IS_FULL_TIME = 2;
+        public const int IS_PART_TIME = 1;
+        public const int EMP_RATE_PER_HOUR = 20;
+        public const int FULL_TIME = 8;
+        public const int PART_TIME = 4;
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage computation Program!");
 
-            //Constants
-            int IS_FULL_TIME = 2;
-            int IS_PART_TIME = 1;
-            int EMP_RATE_PER_HOUR = 20;
-            int FULL_TIME = 8;
-            int PART_TIME = 4;
+            //Variables
+            int empHrs = 0;
+            int empWage = 0;
 
             Random random = new Random();
-
-            //Computations
             int empCheck = random.Next(0, 3);
 
-            if(empCheck == IS_FULL_TIME)
+            switch (empCheck)
             {
-                Console.WriteLine("Employee is Present");
-                Console.WriteLine("Employee daily Wages = " + EMP_RATE_PER_HOUR*FULL_TIME);
+                case IS_PART_TIME:
+                    Console.WriteLine("Employee available for part time.");
+                    empHrs = 4;
+                    break;
+                case IS_FULL_TIME:
+                    Console.WriteLine("Employee Present.");
+                    empHrs = 8;
+                    break;
+                default:
+                    Console.WriteLine("Employee Absent.");
+                    empHrs = 0;
+                    break;
             }
-            else if (empCheck == IS_PART_TIME)
-            {
-                Console.WriteLine("Employee is part time available");
-                Console.WriteLine("Employee daily Wages = " + EMP_RATE_PER_HOUR*PART_TIME);
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-                Console.WriteLine("Employee daily Wages = 0");
-            }
+
+            empWage = empHrs * EMP_RATE_PER_HOUR;
+            Console.WriteLine("Employee Wage = " + empWage);
         }
     }
 }
