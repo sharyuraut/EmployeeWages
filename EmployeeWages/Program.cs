@@ -60,6 +60,7 @@ namespace EmployeeWages
             Console.WriteLine("Company: " + Company);
             Console.WriteLine("Total Employee Wage = " + totalEmpWage);
             Console.WriteLine("Total Employee Hours are: " + totalEmpHrs);
+
         }
     }
 }
