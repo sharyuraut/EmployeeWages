@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace EmployeeWages
 {
@@ -16,12 +17,17 @@ namespace EmployeeWages
         {
             Console.WriteLine("Welcome to Employee Wage computation Program!");
 
+            computeWage();
+        }
+
+        public static void computeWage()
+        {
             //Variables
             int empHrs = 0;
             int empWage = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 
             //Computation
-            for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
+            while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -48,7 +54,8 @@ namespace EmployeeWages
             }
 
             int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Total Employee Wage = " + totalEmpWage);
+            Console.WriteLine("Total Employee Wage = " + totalEmpWage + " Total Employee Hours: " + totalEmpHrs);
+            //return totalEmpWage;
         }
     }
 }
