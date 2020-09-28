@@ -21,7 +21,7 @@ namespace EmployeeWages
             int empWage = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 
             //Computation
-            for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
+            while(totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
