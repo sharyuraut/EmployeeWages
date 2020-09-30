@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using EmployeeWage.Company;
+using EmployeeWages.Company;
 
-namespace EmployeeWage.Wage
+namespace EmployeeWages.Wage
 {
     class CompanyWage
     {
