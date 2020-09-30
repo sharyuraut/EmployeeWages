@@ -10,10 +10,13 @@ namespace EmployeeWage.Company
         //Constants
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
+        public const int PART_TIME = 4;
+        public const int FULL_TIME = 8;
 
         private int noOfCompany = 0;
         private CompanyWage[] CompanyWageArray;
 
+        //creating an array
         public EmployeeCompany()
         {
             this.CompanyWageArray = new CompanyWage[5];
@@ -25,6 +28,7 @@ namespace EmployeeWage.Company
             noOfCompany++;
         }
 
+        //Computation of Employee Wages
         public void computeEmpWage()
         {
             for (int i = 0; i < noOfCompany; i++)
@@ -53,11 +57,11 @@ namespace EmployeeWage.Company
                 switch (empCheck)
                 {
                     case IS_FULL_TIME:
-                        empHours = 8;
+                        empHours = FULL_TIME;
                         break;
 
                     case IS_PART_TIME:
-                        empHours = 4;
+                        empHours = PART_TIME;
                         break;
 
                     default:
